@@ -12,27 +12,27 @@
 
 #include "ft_printf.h"
 
-static int	output(char *str,int *i, va_list ptr)
+static int	output(char *str, int *i, va_list ptr)
 {
 	if (str[*i] == '%')
 	{
 		(*i)++;
 		if (str[*i] == 's')
-			return ((*i)++,ft_putstr(va_arg(ptr,char *)));
-		else if(str[*i] == 'd' || str[*i] == 'i')
-			return ((*i)++,print_nbr(va_arg(ptr, int)));
+			return ((*i)++, ft_putstr(va_arg(ptr, char *)));
+		else if (str[*i] == 'd' || str[*i] == 'i')
+			return ((*i)++, print_nbr(va_arg(ptr, int)));
 		else if (str[*i] == 'X')
-			return ((*i)++,to_hexa(va_arg(ptr,long), 1));
+			return ((*i)++, to_hexa(va_arg(ptr, long), 1));
 		else if (str[*i] == 'x')
-			return ((*i)++,to_hexa(va_arg(ptr, long), 2));
+			return ((*i)++, to_hexa(va_arg(ptr, long), 2));
 		else if (str[*i] == 'p')
-			return ((*i)++,to_hexa1(va_arg(ptr, void *)) + 2);
+			return ((*i)++, to_hexa1(va_arg(ptr, void *)) + 2);
 		else if (str[*i] == 'c')
-			return ((*i)++,ft_putchar(va_arg(ptr, int)));
+			return ((*i)++, ft_putchar(va_arg(ptr, int)));
 		else if (str[*i] == '%')
-			return ((*i)++,write(1, "%", 1), 1);
+			return ((*i)++, write(1, "%", 1), 1);
 		else if (str[*i] == 'u')
-			return ((*i)++,ft_print_nbru(va_arg(ptr, unsigned int)));
+			return ((*i)++, ft_print_nbru(va_arg(ptr, unsigned int)));
 	}
 	return (0);
 }

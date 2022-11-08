@@ -11,18 +11,18 @@
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-int		ft_strlen(char *);
-int		ft_putchar(char);
-int		ft_putstr(char *);
-int		ft_printf(const char *str, ...);
-int		print_nbr(int nbr);
-int		to_hexa(unsigned int, int);
-int		to_hexa1(void *);
-int		ft_print_nbru(unsigned int n);
+int	ft_strlen(char *n);
+int	ft_putchar(char n);
+int	ft_putstr(char *n);
+int	ft_printf(const char *str n, ...);
+int	print_nbr(int nbr);
+int	to_hexa(unsigned int f, int n);
+int	to_hexa1(void *l);
+int	ft_print_nbru(unsigned int n);
 
-#endif 
+#endif

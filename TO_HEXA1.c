@@ -16,10 +16,9 @@ static void	print_hexa(unsigned long c)
 {
 	char	*str;
 
-
-	if (c < 16 &&  c >= 0)
+	if (c < 16 && c >= 0)
 	{
-		str =  "0123456789abcdef";
+		str = "0123456789abcdef";
 		write(1, &str[c], 1);
 	}
 	else
@@ -34,7 +33,7 @@ int	to_hexa1(void *c)
 	unsigned long	l;
 	int				i;
 
-	l =(unsigned long)c;
+	l = (unsigned long)c;
 	write(1, "0x", 2);
 	if (l == 0)
 		return (write(1, "0", 1), 1);
@@ -44,6 +43,6 @@ int	to_hexa1(void *c)
 		l = l / 16;
 		i++;
 	}
-		print_hexa((unsigned long)c);
+	print_hexa((unsigned long)c);
 	return (i);
 }

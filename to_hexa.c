@@ -12,10 +12,9 @@
 
 #include "ft_printf.h"
 
-
 static void	print_hexa(unsigned int c, int i)
 {
-	if (c <= 15 &&  c >= 0)
+	if (c <= 15 && c >= 0)
 	{
 		if (i == 1)
 			write(1, &"0123456789ABCDEF"[c], 1);
@@ -31,8 +30,8 @@ static void	print_hexa(unsigned int c, int i)
 
 int	to_hexa(unsigned int c, int k)
 {
-	long	l;
-	int		i;
+	unsigned int	l;
+	int				i;
 
 	l = c;
 	i = 0;

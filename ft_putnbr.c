@@ -52,6 +52,6 @@ int	print_nbr(int nbr)
 		n = n / 10;
 		i++;
 	}
-	ft_putnbr(nbr);	
+	ft_putnbr(nbr);
 	return (i);
 }

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void	ft_putnbr(unsigned nbr)
+static void	ft_putnbr(unsigned int nbr)
 {
 	char	n;
 
