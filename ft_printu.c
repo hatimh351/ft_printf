@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_nbru.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 15:24:36 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/11/08 11:36:06 by hlahwaou         ###   ########.fr       */
+/*   Created: 2022/11/07 21:44:31 by hlahwaou          #+#    #+#             */
+/*   Updated: 2022/11/07 22:06:59 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "ft_printf.h"
 
-int		ft_strlen(char *);
-int		ft_putchar(char);
-int		ft_putstr(char *);
-int		ft_printf(const char *str, ...);
-int		print_nbr(int nbr);
-int		to_hexa(unsigned int, int);
-int		to_hexa1(void *);
-int		ft_print_nbru(unsigned int n);
+static void	ft_putnbr(unsigned nbr)
+{
+	char	n;
 
-#endif 
+	if (nbr <= 9 && 0 <= nbr)
+	{
+		n = nbr + 48;
+		write(1, &n, 1);
+	}
+	else
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+}
+
+int	ft_print_nbru(unsigned int n)
+{
+	unsigned int	nbr;
+	int				i;
+
+	nbr = n;
+	i = 0;
+	if (n == 0)
+		i++;
+	while (n > 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	ft_putnbr(nbr);
+	return (i);
+}

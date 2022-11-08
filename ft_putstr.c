@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 02:24:17 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/11/07 17:54:47 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/11/08 11:15:31 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,8 @@
 
 int	ft_putstr(char *s)
 {
-	size_t	i;
-
 	if (!s)
-		return (write (1, "(null)",6), 6);
-	i = 0;
-	if (s != 0)
-	{
-		while (s[i])
-		{
-			write(1, &s[i], 1);
-			i++;
-		}
-	}
-	return (i);
+		return (write (1, "(null)", 6), 6);
+	write(1, s, ft_strlen(s));
+	return (ft_strlen(s));
 }

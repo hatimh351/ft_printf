@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:42:40 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/11/07 20:37:16 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:56:31 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void	print_hexa(unsigned long c)
 	char	*str;
 
 
-	if (c <= 16 &&  c >= 0)
+	if (c < 16 &&  c >= 0)
 	{
-		str = "0123456789abcdef";
+		str =  "0123456789abcdef";
 		write(1, &str[c], 1);
 	}
 	else
